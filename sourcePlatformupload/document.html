@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>文档信息</title>
+    <link rel="stylesheet" href="css/document.css">
+    <link rel="stylesheet" href="./dist/semantic.min.css">
+    <link rel="stylesheet" href="./css/addcourse.css">
+    <link rel="stylesheet" href="css/jquery.fileupload.css">
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script src="./dist/semantic.min.js"></script>
+</head>
+<body>
+
+<div id="headerInfinite">
+
+    <div id="headerBox">
+        <a href="#" class="logoBox" id="logoBox">
+            <img src="img/logo.png" alt="">
+        </a>
+        <a href="" class="headerLeft firstNav">首页</a>
+        <a href="" class="headerLeft">课堂</a>
+        <a href="" class="headerLeft">问答</a>
+        <a href="" class="headerLeft">论坛</a>
+
+        <!--<div class="item userHeaderImgbox">-->
+            <!--<img class="ui avatar image" src="./img/daniel.jpg">-->
+            <!--<div class="content">-->
+                <!--<a class="header">Daniel Louise</a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="ui dropdown selectUserInfo">
+            <div class="text">王老师01</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <div class="item">个人基本信息</div>
+                <div class="item">
+                    我的课程
+                </div>
+                <div class="item">
+                    我的学习记录
+                </div>
+                <div class="item">
+                    我的收藏
+                </div>
+                <div class="divider"></div>
+                <div class="item">
+                    <i class="folder icon"></i>
+                    退出登录
+                </div>
+
+            </div>
+        </div>
+
+        <div class="userHeaderImgbox" id="headerImg">
+            <img class="ui circular mini image" src="./img/daniel.jpg">
+        </div>
+
+        <div class="ui action input focus searchInputCon">
+            <input type="text" placeholder="Search...">
+            <button class="ui blue button"><i class="search icon"></i></button>
+        </div>
+    </div>
+</div>
+
+<div id="mainContentCon">
+    <div class="breadcrumbMargin">
+
+        <div class="ui breadcrumb">
+            <a class="section">我的课堂</a>
+            <i class="right angle icon divider"></i>
+            <a class="active section">语文课第一章</a>
+            <!--<i class="right angle icon divider"></i>-->
+            <!--<div class="active section">T-Shirt</div>-->
+        </div>
+    </div>
+    <div class="mainContentBox">
+        <div class="siderBarBox  siderBarVdo">
+            <div dataNo="1" class="courseListA"><i class="wpforms icon"></i>基本信息</div>
+            <div dataNo="2" class="courseListA"><i class="file text outline icon"></i>课程介绍</div>
+            <div dataNo="3" class="courseListA"><i class="file video outline icon"></i>视频信息</div>
+            <div dataNo="4" class="courseListA"><i class="copy icon"></i>文档信息</div>
+        </div>
+        <div class="mainContent">
+
+            <div class="docBody">
+                <div class="doc_top">
+                    <span class="span_1 fl">文档信息</span><span class="span_2 fr"><span>返回</span><span class="add_doc">新增</span></span>
+                </div>
+                
+                <div class="doc_contenttop">
+                    <div class="ui form doc_addlist">
+                        <div class="inline field doc_Wininput">
+                            <label>文档标题:</label>
+                            <input id="doc_Title" class="ipWidth" type="text" placeholder="请输入文档标题">
+                            <button class="ui button fr doc_slideup">取消</button>
+                            <button class="ui primary button fr doc_ok">保存</button>
+                             
+                        </div>
+                        <div class="inline field ">
+                            <label>文档附件:</label>
+                            <input type="text" class="ipWidth" placeholder="请上传文档附件">
+                            <button class="ui primary button docType_but">
+                                <div class=" docType_span fileinput-button">
+                                    <span>上传文件</span>
+                                    <!-- The file input field used as target for the file upload widget -->
+                                    <input class="doc_type" type="file" name="files[]" multiple>
+                                </div>
+
+                            </button>
+                        </div>
+                    </div>
+                    <div class="doc_listBody">
+                        <div class="doc_list">
+                            <span class="doc_listTitle">1.1课堂的标题</span><span class="doc_editor fr"><span class="amend_doc">修改</span>丨<span class="doc_delete">删除</span>丨<span>上移</span>丨<span>下移</span></span>
+                        </div>
+                        <div class="doc_list">
+                            <span class="doc_listTitle">1.2课堂的标题</span><span class="doc_editor fr"><span class="amend_doc">修改</span>丨<span class="doc_delete">删除</span>丨<span>上移</span>丨<span>下移</span></span>
+                        </div>
+                        <div class="doc_list">
+                            <span class="doc_listTitle">1.3课堂的标题</span><span class="doc_editor fr"><span class="amend_doc">修改</span>丨<span class="doc_delete">删除</span>丨<span>上移</span>丨<span>下移</span></span>
+                        </div>
+                        <div class="doc_list">
+                            <span class="doc_listTitle">1.4课堂的标题</span><span class="doc_editor fr"><span class="amend_doc">修改</span>丨<span class="doc_delete">删除</span>丨<span>上移</span>丨<span>下移</span></span>
+                        </div>
+    
+                    </div>
+                    <div class="doclist_empty">
+                        <img src="img/editor.png">
+                    </div>
+
+
+
+                    <!--<div class="pageSelectCon">-->
+                        <!--<div class="ui pagination menu">-->
+                            <!--<a class="icon item">首页</a>-->
+                            <!--<a class="icon item"><i class="left chevron icon"></i> 上一页</a>-->
+                            <!--<a class="item">1</a>-->
+                            <!--<a class="item">2</a>-->
+                            <!--<a class="item">3</a>-->
+                            <!--<a class="item">4</a>-->
+                            <!--<a class="item">5</a>-->
+                            <!--<a class="item">6</a>-->
+                            <!--<a class="icon item">下一页 <i class="right chevron icon"></i></a>-->
+                            <!--<a class="icon item">末页</a>-->
+                        <!--</div>-->
+                        <!--<div class="marginVirture">-->
+                    <!---->
+                        <!--</div>-->
+                        <!--<div class="ui pagination menu selectPageBox">-->
+                            <!--<a class="item">第</a>-->
+                            <!--<select class="item ui dropdown selectPage">-->
+                                <!--<option value="0">0</option>-->
+                                <!--<option value="1">1</option>-->
+                                <!--<option value="2">2</option>-->
+                                <!--<option value="1">3</option>-->
+                                <!--<option value="2">4</option>-->
+                                <!--<option value="1">5</option>-->
+                                <!--<option value="2">6</option>-->
+                            <!--</select>-->
+                            <!--<a class="item">页</a>-->
+                        <!--</div>-->
+                	<!--</div>-->
+                </div>
+                                
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="ui modal doc_confirm">
+    <i class="close icon"></i>
+    <div class="header">
+        消息
+    </div>
+    <div class="image content">
+        <div class="description">
+            确定要删除此章节吗？
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui cancel  button">取消</div>
+        <div class="ui  ok  primary  button">确定</div>
+    </div>
+</div>
+<script type="text/javascript"> 
+	$('.vdo_content>div').mouseenter(function(){
+		$(this).find('.vod_layer').css({bottom:'0'})
+	})
+	$('.vdo_content>div').mouseleave(function(){
+		$(this).find('.vod_layer').css({bottom:-$(this).height()})
+	})
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

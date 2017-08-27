@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+</head>
+<body>
+<input type="button" id="download" value="Download" />
+<script type="text/javascript">
+    var client = new OSS.Wrapper({
+        region: 'oss-cn-shanghai',
+        accessKeyId: 'LTAICNs9WNKWyN90',
+        accessKeySecret: '9MYgT69NghzGPsat9Q9dPgxwTW0BJR',
+        bucket: 'eeclass-kejian-store-1'
+    });
+    document.getElementById('download').addEventListener('click', function (e) {
+        var objectKey = 'liboo/48hY6xJtyB.png';
+        var saveAs = 'download.png';
+        console.log(objectKey + ' => ' + saveAs);
+        var result = client.signatureUrl(objectKey, {
+            expires: 3600,
+            response: {
+                'content-disposition': 'attachment; filename="' + saveAs + '"'
+            }
+        });
+        console.log(result);
+        window.location = result;
+    });
+</script>
+
+
+</body>
+</html>

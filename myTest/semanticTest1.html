@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../semantic/dist/semantic.min.css">
+    <!--<script src="js/jquery.js"></script>-->
+    <link rel="stylesheet" href="./uploadfile.css">
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>-->
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui form">
+    <div class="two fields">
+        <div class="field">
+            <label>Integer</label>
+            <input name="integer" type="text" value="101">
+        </div>
+        <div class="field">
+            <label>E-mail</label>
+            <input name="email" type="text" value="jack@foo">
+        </div>
+    </div>
+    <div class="two fields">
+        <div class="field">
+            <label>Decimal</label>
+            <input name="decimal" type="text" value="1.1.1">
+        </div>
+        <div class="field error">
+            <label>Number</label>
+            <input name="number" type="text" value="+200">
+        </div>
+    </div>
+    <div class="two fields">
+        <div class="field">
+            <label>URL</label>
+            <input name="url" type="text" value="ww.fakeurl.com">
+        </div>
+        <div class="field error">
+            <label>RegEx</label>
+            <input name="regex" type="text" value="joe">
+        </div>
+    </div>
+    <div class="ui submit button">Submit</div>
+    <div class="ui error message"></div>
+</div>
+
+<script>
+
+    $('.ui.form')
+            .form({
+                on: 'blur',
+                fields: {
+                    integer: {
+                        identifier  : 'integer',
+                        rules: [
+                            {
+                                type   : 'integer[1..100]',
+                                prompt : 'Please enter an integer value'
+                            }
+                        ]
+                    },
+                    decimal: {
+                        identifier  : 'decimal',
+                        rules: [
+                            {
+                                type   : 'decimal',
+                                prompt : 'Please enter a valid decimal'
+                            }
+                        ]
+                    },
+                    number: {
+                        identifier  : 'number',
+                        rules: [
+                            {
+                                type   : 'number',
+                                prompt : 'Please enter a valid number'
+                            }
+                        ]
+                    },
+                    email: {
+                        identifier  : 'email',
+                        rules: [
+                            {
+                                type   : 'email',
+                                prompt : 'Please enter a valid e-mail'
+                            }
+                        ]
+                    },
+                    url: {
+                        identifier  : 'url',
+                        rules: [
+                            {
+                                type   : 'url',
+                                prompt : 'Please enter a url'
+                            }
+                        ]
+                    },
+                    regex: {
+                        identifier  : 'regex',
+                        rules: [
+                            {
+                                type   : 'regExp[/^[a-z0-9_-]{4,16}$/]',
+                                prompt : 'Please enter a 4-16 letter username'
+                            }
+                        ]
+                    }
+                }
+            })
+    ;
+
+
+</script>
+
+
+</body>
+</html>

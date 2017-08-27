@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>上传课程</title>
+    <link rel="stylesheet" href="../semantic/dist/semantic.min.css">
+    <!--<script src="js/jquery.js"></script>-->
+    <link rel="stylesheet" href="./uploadfile.css">
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+
+<div class="testHeader"></div>
+
+<div class="ui container" style="overflow: hidden;">
+    <div class="ui stackable menu">
+        <div class="item">
+            <i class="bordered inverted teal google wallet icon"></i>
+            <span class="ui teal">益课微云</span>
+        </div>
+        <a class="item">所有课程</a>
+        <a class="item">公共课程</a>
+        <a class="item">名师课程</a>
+        <div class="right item">
+            <div class="ui action input">
+                <input type="text" placeholder="search cource">
+                <div class="ui teal button">Go</div>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="ui header" style="margin-top: 36px;">
+        <i class="bar leanpub icon"></i>
+        <div class="content">制作课程</div>
+    </h5>
+    <div class="ui divider"></div>
+
+    <div class="ui attached teal steps" id="switchSteps" style="margin-bottom: 24px;">
+        <div class="active step">
+            <i class="truck teal icon"></i>
+            <div class="content">
+                <div class="title">
+                    课程基本信息
+                </div>
+            </div>
+
+        </div>
+        <div class="disabled step">
+            <i class="payment icon"></i>
+            <div class="content">
+                <div class="title">添加课程内容</div>
+            </div>
+        </div>
+        <div class="disabled step">
+            <i class="info icon"></i>
+            <div class="content">
+                <div class="title">
+                    添加附件
+                </div>
+            </div>
+        </div>
+
+        <div class="disabled step">
+            <i class="flag checkered icon"></i>
+            <div class="content">
+                <div class="title">完成</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--第一个表单-->
+    <div class="ui form" id="basicInfo">
+        <h4 class="ui dividing header" style="margin: 24px 0">
+            课程基本信息
+        </h4>
+        <div class="required field">
+            <label>课程名称</label>
+            <div class="ui fluid icon input">
+                <input type="text" placeholder="4-30个字符">
+            </div>
+        </div>
+        <div class="three fields basicInfoMargin">
+            <div class="required field">
+                <label>选择学校</label>
+                <select name="selSchool" id="selSchool" class="ui fluid dropdown">
+                    <option value="fudan">复旦大学</option>
+                    <option value="shanghaijiaoda">上海交通大学</option>
+                    <option value="tongji">同济大学</option>
+                    <option value="huadongshifan">华东师范大学</option>
+                    <option value="shanghaicaijing">上海财经大学</option>
+                    <option value="donghua">东华大学</option>
+                    <option value="huadongligong">华东理工大学</option>
+                    <option value="huadongzhengfa">华东政法大学</option>
+                </select>
+            </div>
+            <div class="required field" id="selCollege">
+                <label>选择学院</label>
+                <div class="ui fluid search selection dropdown">
+                    <input type="hidden" name="college">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">选择院系</div>
+                    <div class="menu">
+                        <div class="item" data-value="huagong">化工学院</div>
+                        <div class="item" data-value="huagong">机电学院</div>
+                        <div class="item" data-value="huagong">轨道交通学院</div>
+                        <div class="item" data-value="huagong">建筑设计学院</div>
+                        <div class="item" data-value="huagong">计算机科学学院</div>
+                        <div class="item" data-value="huagong">材料工程学院</div>
+                        <div class="item" data-value="huagong">传媒学院</div>
+                        <div class="item" data-value="huagong">外国语学院</div>
+                        <div class="item" data-value="huagong">物理学院</div>
+                        <div class="item" data-value="huagong">地球工程与科学学院</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="required field" id="selMajor">
+                <label>选择专业</label>
+                <div class="ui fluid search selection dropdown">
+                    <input type="hidden" name="major">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">选择专业</div>
+                    <div class="menu">
+                        <div class="item" data-value="biaomianjinshi">表面精饰</div>
+                        <div class="item" data-value="biaomianjinshi">精细化工</div>
+                        <div class="item" data-value="biaomianjinshi">有机化学</div>
+                        <div class="item" data-value="biaomianjinshi">物理化学</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="required field">
+            <label>输入关键字,以<a class="ui mini label">逗号</a>分隔</label>
+            <div class="ui fluid icon input">
+                <input type="text" placeholder="4-30个字符">
+            </div>
+        </div>
+        <div class="field">
+            <div class="required inline fields">
+                <label for="pu_or_pr">是否公开课程</label>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="pu_or_pr" value="private" >
+                        <label>私有</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="pu_or_pr" value="public" >
+                        <label>公开</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="required inline fields">
+                <label for="co_or_sp">公共课或专业课</label>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="co_or_sp" value="common" >
+                        <label>公共课</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="co_or_sp" value="special" >
+                        <label>专业课</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="required field">
+            <label>课程简介</label>
+            <textarea name="courseSummary" id="courseSummary" cols="30" rows="10"></textarea>
+        </div>
+        <div class="field">
+            <div class="ui checkbox" id="agreeClause">
+                <input type="checkbox" />
+                <label >同意益课微云服务条款</label>
+            </div>
+        </div>
+        <div class="field">
+            <div style="float:right; overflow: hidden;">
+                <button id="cofirmBasicInfo" class="ui right labeled orange icon button"><i class="right arrow icon"></i> 确认并开始上传课程 </button>
+                <button class="ui toggle button">取消创建</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div style="height: 96px;"></div>
+
+
+
+<script src="makecourse.js"></script>
+</body>
+</html>

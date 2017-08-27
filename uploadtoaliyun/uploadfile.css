@@ -1,0 +1,52 @@
+.testHeader{
+    height:12px ;
+}
+
+#basicInfo > div {
+    margin-top: 24px;
+}
+
+.previewImgBox{
+    display:block;
+    width:400px;
+    height:150px;
+    margin:0 auto ;
+
+}
+.previewImgBox > div {
+    display: inline-block;
+    height:150px;
+    width:200px;
+    float:left ;
+    overflow: hidden;
+    position: relative;
+}
+.previewImgBox img{
+    height:100%;
+}
+.previewImgBox button{
+    position:absolute;
+    left:24px ;
+    bottom:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

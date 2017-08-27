@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>上传课程</title>
+    <link rel="stylesheet" href="./semantic.min.css">
+    <link rel="stylesheet" href="css/addCourses.css">
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script src="js/lodash.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./semantic.min.js"></script>
+</head>
+<body>
+
+<div class="ui" id="addMainCourse">
+    <table class="ui teal table" id="courseList">
+        <thead>
+        <tr>
+            <th>
+                缩略图
+            </th>
+            <th>名称</th>
+            <th>关键字</th>
+            <th>头衔</th>
+            <th>所属</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="listTr">
+            <td>
+                <img class="ui tiny image" src="img/preview_img.png"/>
+            </td>
+            <td><a href="#">高分子有机化学</a></td>
+            <td>地球，环境，科学，地理</td>
+            <td>教授，讲师</td>
+            <td>中山大学,化工学院,应用化学</td>
+            <td>
+                <a class="ui label modifyBtn">修改</a>
+                <a class="ui label deleteBtn">删除</a>
+                <a class="ui label modifyPreviewBtn">修改缩略图</a>
+            </td>
+        </tr>
+
+        <!--<tr class="modifyPreviewTr">-->
+        <!--<td colspan="6">-->
+
+        <!--</td>-->
+
+        <!--</tr>-->
+
+        </tbody>
+        <tfoot>
+        <tr>
+            <th colspan="6">
+                <div class="ui" style="display: inline-block ; float : right">
+                    <a class="ui labeled teal icon button" id="addNewCourseBtn"> <i class="plus icon"></i> 新增课程 </a>
+                </div>
+
+            </th>
+
+        </tr>
+        </tfoot>
+    </table>
+
+</div>
+
+<!--<div class="ui small modal transition active" id="modifyModalImg">-->
+<!--<div class="ui fullscreen modal transition" id="modifyModalImg">-->
+    <!--<i class="close icon"></i>-->
+    <!--<div class="header">-->
+        <!--填写课程信息-->
+    <!--</div>-->
+
+    <!--<div class="previewImgBox">-->
+    <!--<div id="previewRegion">-->
+    <!--<img id="previewImg" src="image-text.png" alt="" class="ui small img" />-->
+    <!--<input type="file" id="previewFile" style="display:none ;" >-->
+    <!--</div>-->
+    <!--<div>-->
+    <!--<button class="ui disabled teal button" id="uploadPreviewBtn">-->
+    <!--上传到服务器-->
+    <!--</button>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="actions">-->
+        <!--<div class="ui black deny button">-->
+            <!--取消-->
+        <!--</div>-->
+        <!--<div class="ui positive right labeled icon button">-->
+            <!--确认修改-->
+            <!--<i class="checkmark icon"></i>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<div class="ui fullscreen modal transition active" id="modifyModalInfo">-->
+<div class="ui fullscreen modal transition" id="modifyModalInfo">
+    <i class="close icon"></i>
+    <div class="header">
+        修改课程基本信息
+    </div>
+
+    <div class="previewImgBox">
+        <div id="previewRegion">
+            <img id="previewImg" todo="addNew" src="image-text.png" alt="" class="ui small img"/>
+            <input type="file" id="previewFile" style="display:none ;">
+        </div>
+        <div>
+            <button class="ui disabled teal button" id="uploadPreviewBtn">
+                上传到服务器
+            </button>
+        </div>
+    </div>
+
+    <div class="ui form popupBasicInfoMargin">
+        <div class="required field">
+            <label>课程名称</label>
+            <div class="ui fluid icon input">
+                <input name="courseNameAdd" type="text" placeholder="4-30个字符" id="courseNameAdd">
+            </div>
+        </div>
+        <div class="two fields">
+            <div class="field">
+                <label>关键字</label>
+                <div class="ui fluid icon input">
+                    <input name="modifyMainKeyAdd" type="text" placeholder="4-30个字符" id="modifyMainKeyAdd">
+                </div>
+            </div>
+            <div class="field">
+                <label>头衔</label>
+                <div class="ui fluid icon input">
+                    <input name="teachHonorAdd" type="text" placeholder="4-30个字符" id="teachHonorAdd">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="three fields">
+            <div class="required field" id="selSchoolAdd">
+                <label>选择学校</label>
+                <div class="ui fluid search selection dropdown">
+                    <input type="hidden" name="college">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">选择学校</div>
+                    <div class="menu">
+                        <div class="item" data-value="0">复旦大学</div>
+                        <div class="item" data-value="1">上海交通大学</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="required field" id="selCollegeAdd">
+                <label>选择学院</label>
+                <div class="ui fluid search selection dropdown">
+                    <input type="hidden" name="college">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">选择院系</div>
+                    <div class="menu">
+                        <div class="item" data-value="huagong">化工学院</div>
+                        <div class="item" data-value="huagong">机电学院</div>
+                    </div>
+                </div>
+            </div>
+            <div class="required field" id="selMajorAdd">
+                <label>选择专业</label>
+                <div class="ui fluid search selection dropdown" >
+                    <input type="hidden" name="major">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">选择专业</div>
+                    <div class="menu">
+                        <div class="item" data-value="biaomianjinshi">表面精饰</div>
+                        <div class="item" data-value="biaomianjinshi">精细化工</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <div class="ui black deny button">
+            取消
+        </div>
+        <div class="ui disabled positive right labeled icon button" id="confirmAddCourse">
+            确认修改
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="js/varBasicFun.js"></script>
+<script src="js/addCourseLoadInit.js"></script>
+<script src="js/courseList.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

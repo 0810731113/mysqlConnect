@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+html,body{ width:100%; margin:0; padding:0; border:0; min-width:1200px;font-family:"SimHei";}
+.fl{ float:left;}
+.fr{ float:right;}
+.videoBody{ width:950px;}
+.vdo_top{ padding:0 10px; height:40px; background:#2EB2E8; line-height:40px; color:#fff;}
+.span_1{ font-size:18px;}
+.span_2{ font-size:14px;}
+.span_2 span{ cursor:pointer;}
+.span_2 span{ margin:0 5px;}
+.vdo_contenttop{ padding:10px 8px;  zoom:1; overflow:auto; border:1px solid #dadada; min-height: 458px;}
+.list_empty{ width: 100%; height: 438px; z-index: -10; text-align: center; display: none;}
+.list_empty img{position: relative; top:129px; }
+.vdo_content{}
+.vdo_content>div{ width:300px; height:208px; background:#f0f0f0; margin:5px; float:left; position:relative;overflow: hidden; cursor:pointer;}
+.vdo_layer{	position: absolute;bottom:-208px;width: 300px;height: 208px; color:#FFFFFF;background: rgba(0,0,0,0.8);transition: all 0.6s;}
+.vdo_layer span{ display:inline-block;}
+.vdo_img{ width:100%; height:168px;}
+.vdo_img img{ width:100%; height:100%;}
+.vdo_title{ padding:0 10px; height:40px; color:#333; line-height:40px; font-size:16px;}
+.vdo_hovertitle{ width:220px; padding:10px; font-size:16px;}
+.vdo_icon{ width:80px; padding:10px; font-size:20px; position:absolute;}
+.vdo_icon>i:hover { color:#2FB2E8;}
+.vdo_hoverbody{ padding:0 10px; word-wrap:break-word;word-break:break-all;}
+.vdo_win{ width:500px !important; margin:-200px 0 0 -250px !important; height:400px !important;}
+.vdo_confirm{ width:320px !important; margin: -100px 0 0 -160px !important;}
+.vdo_header{ padding:0 10px; height:40px; background:#2EB2E8; line-height:40px; color:#fff; border-bottom-right-radius:0 !important; border-bottom-left-radius:0 !important;}
+.vdo_Wininput{ width:460px !important; margin:1em auto !important;}
+.vdo_Wintype{ width:460px !important; margin:1em auto !important;}
+.vdo_updeat{ vertical-align:bottom !important;}
+.vdo_Wininput button{ padding:.5em 1.2em .5em !important; margin:0 .4em !important; font-weight:normal !important;}
+.ipWidth{ width:260px !important; padding:.4em 1em !important;}
+.vdoType_but{ padding: 0!important; margin:0 .4em !important;  vertical-align: bottom !important; font-weight:normal !important;}
+.vdoType_span{ padding:.5em 1.2em .5em !important;}
+.vdo_Winlogin{ width:100%; text-align:center;}
+.vdo_Winlogin button{ padding:.5em 1.4em .5em !important; margin:0 .4em !important; font-weight:normal !important;}
+.vdo_Winimg{ display:inline-block; width:160px; height:90px; background:#f5f5f5; vertical-align:top;}
+.vdo_Wininput textarea{ width:406px !important; height:6em !important; min-height:6em !important;}
+.siderBarVdo>div{ padding: 0 20px; font-size: 16px;}

@@ -1,0 +1,305 @@
+#headerInfinite{
+    height:60px ;
+    border-bottom:1px solid #d6d6d6 ;
+}
+#headerBox{
+    width : 1200px ;
+    margin : 0px auto ;
+    height:60px ;
+}
+
+
+.headerLeft{
+    float: left;
+    display: block;
+    text-decoration: none;
+    line-height: 60px ;
+    padding-right: 1.4rem;
+    padding-left: 1.4rem;
+    cursor: pointer;
+    font-size: 16px ;
+    font-family: "微软雅黑";
+    color: #373a3a;
+    font-weight: 200;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.headerLeft:hover{
+    background-color: #2eb2e8;
+    color:#FFF ;
+}
+
+.logoBox{
+    height:60px; ;
+    width : 102px ;
+    float: left;
+    display: block;
+    text-decoration: none;
+    line-height: 60px ;
+    padding-right: 0rem;
+    padding-left: 0rem;
+    cursor: pointer;
+    font-size: 16px ;
+    font-family: "微软雅黑";
+    color: #373a3a;
+    font-weight: 200;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.logoBox img{
+    width:100% ;
+    padding-top: 6px;
+}
+
+.firstNav{
+    margin-left: 36px;
+}
+.searchInputCon{
+    margin-top:10px;
+    float:right;
+}
+/*.userHeaderImgbox{*/
+    /*float:right ;*/
+/*}*/
+.userHeaderImgbox{
+    float:right ;
+    margin:0 ;
+    margin-top: 12px ;
+    margin-left:36px ;
+
+}
+.selectUserInfo{
+    float:right ;
+    margin-top: 18px;
+    margin-left: 12px;
+}
+
+
+#mainContentCon{
+    width:1200px;
+    margin:0 auto ;
+    /*background-color:lightgray;*/
+    /*min-height: 800px;*/
+}
+
+.breadcrumbMargin{
+    margin: 12px;
+}
+
+.mainContentBox{
+    width:100% ;
+}
+.siderBarBox{
+    width:230px;
+    float:left ;
+    border:1px solid #dadada ;
+    padding:12px ;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.courseListA{
+    font-size: 1.3rem;
+    font-family: "微软雅黑";
+    line-height: 2.4rem;
+    cursor: pointer;
+}
+
+.courseListB{
+    font-size: 1.1rem;
+    font-family: "宋体";
+    line-height: 2.4rem;
+    cursor: pointer;
+    padding-left: 2.0rem;
+}
+
+.courseListA:hover{
+    background-color:#f8f8f8 ;
+    color:#2cb1e9 ;
+}
+
+.courseListB:hover{
+    background-color:#f8f8f8 ;
+    color:#2cb1e9 ;
+}
+
+.mainContent{
+    width:950px;
+    float:right ;
+}
+.mainTitle{
+    height:40px;
+    color:#FFF ;
+    line-height: 40px;
+    font-family: "微软雅黑";
+    font-size:16px;
+    padding-left: 12px;
+    background-color: #2fb2e8 ;
+}
+.mainListCon{
+    border:1px solid #dadada ;
+    webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding:10px;
+}
+
+.courseListEveryone{
+    width:100%;
+    border-bottom: 1px solid #e6e6e6;
+    overflow: hidden;
+}
+.addTimeAndOparite{
+    line-height: 2.4rem;
+    overflow: hidden;
+}
+.addTimeAndOparite > div{
+    /*display: inline-block;*/
+}
+.addTimeAndOparite .addTime{
+    float:left ;
+    color:#9d9d9d ;
+}
+.addTimeAndOparite .opariteCourse{
+    float: right ;
+}
+
+.everyoneCourseMain{
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+.previewImgCon{
+    width:200px ;
+    height : 116px ;
+    float: left;
+}
+.previewImgCon img{
+    width:100%;
+}
+.courseText{
+    width:718px;
+    height : 116px ;
+    float:left ;
+    margin-left: 8px;
+    overflow: hidden;
+
+}
+.everyoneCourseMain .courseTitle{
+    font-size: 18px;
+}
+.everyoneCourseMain .courseTitleText{
+    color:#05a5fb ;
+}
+
+.everyoneCourseMain .courseSummary{
+    font-size: 12px;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+.pageSelectCon{
+    display: inline-block;
+    margin:46px ;
+}
+
+.ui.dropdown.selectPage{
+    padding:0 ;
+}
+
+.pageSelectCon .selectPageBox{
+    margin-left:16px;
+}
+.marginVirture{
+    width: 16px;
+    display: inline-block;
+}
+
+.courseTitle a.lableMargin{
+    margin-left: 12px;
+}
+
+.courseListB{
+    color:#000000;
+    /*display: none ;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

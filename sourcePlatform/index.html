@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>上传课程</title>
+    <link rel="stylesheet" href="./dist/semantic.min.css">
+    <link rel="stylesheet" href="./css/addcourse.css">
+    <!--<link rel="stylesheet" href="./css/kkpager_orange.css">-->
+    <link rel="stylesheet" href="./css/paging.css">
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>-->
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./dist/semantic.min.js"></script>
+    <!--<script src="./js/kkpager.js"></script>-->
+    <script src="./js/paging.js"></script>
+</head>
+<body>
+
+<div id="headerInfinite">
+
+    <div id="headerBox">
+        <a href="#" class="logoBox" id="logoBox">
+            <img src="img/logo.png" alt="">
+        </a>
+        <a href="" class="headerLeft firstNav">首页</a>
+        <a href="" class="headerLeft">课堂</a>
+        <a href="" class="headerLeft">问答</a>
+        <a href="" class="headerLeft">论坛</a>
+
+        <!--<div class="item userHeaderImgbox">-->
+            <!--<img class="ui avatar image" src="./img/daniel.jpg">-->
+            <!--<div class="content">-->
+                <!--<a class="header">Daniel Louise</a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="ui dropdown selectUserInfo">
+            <div class="text">王老师01</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <div class="item">个人基本信息</div>
+                <div class="item">
+                    我的课程
+                </div>
+                <div class="item">
+                    我的学习记录
+                </div>
+                <div class="item">
+                    我的收藏
+                </div>
+                <div class="divider"></div>
+                <div class="item">
+                    <i class="folder icon"></i>
+                    退出登录
+                </div>
+
+            </div>
+        </div>
+
+        <div class="userHeaderImgbox" id="headerImg">
+            <img class="ui circular mini image" src="./img/daniel.jpg">
+        </div>
+
+        <div class="ui action input focus searchInputCon">
+            <input type="text" placeholder="Search...">
+            <button class="ui blue button"><i class="search icon"></i></button>
+        </div>
+    </div>
+</div>
+
+<div id="mainContentCon">
+    <div class="breadcrumbMargin">
+
+        <div class="ui breadcrumb">
+            <a class="section">主页</a>
+            <i class="right angle icon divider"></i>
+            <a class="active section">我的课堂</a>
+            <!--<i class="right angle icon divider"></i>-->
+            <!--<div class="active section">T-Shirt</div>-->
+        </div>
+    </div>
+    <div class="mainContentBox">
+        <div class="siderBarBox">
+            <!--<div dataNo="1" class="courseListA">语文课</div>-->
+            <!--<div dataNo="1_0" class="courseListB">语文课第零章</div>-->
+            <!--<div dataNo="1_1" class="courseListB">语文课第一章</div>-->
+            <!--<div dataNo="1_2" class="courseListB">语文课第二章</div>-->
+            <!--<div dataNo="1_3" class="courseListB">语文课第三章</div>-->
+            <!--<div dataNo="1_4" class="courseListB">语文课第四章</div>-->
+            <!--<div dataNo="1_5" class="courseListB">语文课第五章</div>-->
+            <!--<div dataNo="1_6" class="courseListB">语文课第六章</div>-->
+            <!--<div dataNo="2" class="courseListA">英语课</div>-->
+            <!--<div dataNo="2_1" class="courseListB">英语课第一章</div>-->
+            <!--<div dataNo="2_2" class="courseListB">英语课第二章</div>-->
+            <!--<div dataNo="2_3" class="courseListB">英语课第三章</div>-->
+            <!--<div dataNo="2_4" class="courseListB">英语课第四章</div>-->
+            <!--<div dataNo="2_5" class="courseListB">英语课第五章</div>-->
+            <!--<div dataNo="2_6" class="courseListB">英语课第六章</div>-->
+            <!--<div dataNo="3" class="courseListA">数学课</div>-->
+            <!--<div dataNo="3_1" class="courseListB">数学课第一章</div>-->
+            <!--<div dataNo="3_2" class="courseListB">数学课第二章</div>-->
+            <!--<div dataNo="3_3" class="courseListB">数学课第三章</div>-->
+            <!--<div dataNo="3_4" class="courseListB">数学课第四章</div>-->
+            <!--<div dataNo="3_5" class="courseListB">数学课第五章</div>-->
+            <!--<div dataNo="3_6" class="courseListB">数学课第六章</div>-->
+            <!--<div dataNo="4" class="courseListA">音乐课</div>-->
+            <!--<div dataNo="4_1" class="courseListB">音乐课第一章</div>-->
+            <!--<div dataNo="4_2" class="courseListB">音乐课第二章</div>-->
+            <!--<div dataNo="4_3" class="courseListB">音乐课第三章</div>-->
+            <!--<div dataNo="4_4" class="courseListB">音乐课第四章</div>-->
+            <!--<div dataNo="4_5" class="courseListB">音乐课第五章</div>-->
+            <!--<div dataNo="4_6" class="courseListB">音乐课第六章</div>-->
+            <!--<div dataNo="4_7" class="courseListB">音乐课第七章</div>-->
+        </div>
+        <div class="mainContent" id="mainContent">
+            <div class="mainTitle">课程目录</div>
+            <div class="mainListCon">
+                <!--<div class="courseListEveryone">-->
+                    <!--<div class="addTimeAndOparite">-->
+                        <!--<div class="addTime">-->
+                            <!--添加时间:-->
+                            <!--<span>2017-06-15</span>-->
+                        <!--</div>-->
+                        <!--<div class="opariteCourse">-->
+                            <!--<span class="modifyCourse">修改</span> |-->
+                            <!--<span class="deleteCourse">删除</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="everyoneCourseMain">-->
+                        <!--<a class="previewImgCon"><img src="img/preview1.png" alt=""></a>-->
+                        <!--<div class="courseText">-->
+                            <!--<div class="courseTitle">-->
+                                <!--<a href="" class="courseTitleText">有机化学实验</a>-->
+                                <!--<a class="ui orange label lableMargin">公开课</a>-->
+                                <!--<a class="ui teal label lableMargin">专业课</a>-->
+                            <!--</div>-->
+
+                            <!--<div class="courseSummary">-->
+                                <!--如果只介绍这个框架，没什么内容，框架相关feature站点上有不需要说，所以干脆列出自己常用的几个前端框架，算是做个阶段性总结。本文的核心是侧重于HTML/CSS的框架，JS框架或以JS为核心的框架不讨论,如果只介绍这个框架，没什么内容，框架相关feature站点上有不需要说，所以干脆列出自己常用的几个前端框架-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+            </div>
+            <div class="pageSelectCon" id="kkpager"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/loadpageinit.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

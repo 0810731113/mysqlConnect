@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <style>
+        #showImgBox{
+            position:absolute;
+            widht:400px;
+            height:300px;
+            bottom:0 ;
+            right:0 ;
+            overflow: hidden;
+        }
+        #showImgBox img{
+            width:100% ;
+            height : 100% ;
+        }
+
+    </style>
+</head>
+<body>
+<!--<input type="file" id="file" />-->
+
+<input type="file" id="fileBtn" style="display: none"><br>
+<img id="previewBtn" src="image-text.png" height="200" width="300" alt="Image preview..."/>
+<button id="uploadBtn">上传预览图</button>
+<div id="showImgBox">
+    <img src="image-text.png" alt="">
+
+</div>
+<script type="text/javascript">
+    //当前图片，避免多次上传同一张图片
+    var cur_image_file = null ;
+
+    var client = new OSS.Wrapper({
+        region: 'oss-cn-shanghai',
+        accessKeyId: 'LTAIOzCOPhMcXFAh',
+        accessKeySecret: 'CRWJQgBKQAoWI2XaGGYTLDD7WLZXW7',
+        bucket: 'eeclass-kejian-store-1'
+    });
+
+//    document.getElementById('file').addEventListener('change', function (e) {
+//        var file = e.target.files[0];
+//        var storeAs = 'upload-file-libo';
+//        console.log(file.name + ' => ' + storeAs);
+//        client.multipartUpload(storeAs, file).then(function (result) {
+//            console.log(result);
+//        }).catch(function (err) {
+//            console.log(err);
+//        });
+//    });
+    function random_string(len){
+        len = len || 32 ;
+        var chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678' ;
+        var maxPos = chars.length ;
+        var pwd = '' ;
+        for(i = 0 ; i < len ; i++){
+            pwd += chars.charAt(Math.floor(Math.random() * maxPos )) ;
+        }
+        return pwd ;
+    }
+
+    function get_suffix(filename){
+
+        var pos = filename.lastIndexOf('.') ;
+        var suffix = '' ;
+        if(pos != -1){
+            suffix = filename.substring(pos);
+        }
+        return suffix ;
+    }
+
+    function calculate_object_name(filename , len){
+        if(filename  == null || filename == ''){
+            console.log("获取文件名称错误!!!!");
+            return ''
+        }
+        console.log(random_string(len) + get_suffix(filename))
+
+        return random_string(len) + get_suffix(filename);
+    }
+
+    $("#uploadBtn").click(function(){
+        var file  = document.querySelector('input[type=file]').files[0];
+        if(file == null || file == ''){
+            console.log("没有文件被选择,请检查!!!");
+            return ;
+        }
+        if(file.size >= 1048576 || !(/image\//.test(file.type)) ){
+            console.log("文件不符合要求,请重新选择!!!")
+
+        }
+        if(cur_image_file == file){
+            console.log("图片已经上传过，请重新选择!!!");
+            return
+        }
+        cur_image_file = file ;
+        var storeAs = calculate_object_name(file.name,32) ;
+        client.multipartUpload(storeAs,file).then(function(result){
+            console.log(result);
+            $("#showImgBox img").attr("src" , result.url);
+        }).catch(function(err){
+            console.log("上传失败 --> " + err) ;
+        })
+
+    })
+    $("#fileBtn").change(function(){
+        //var preview = document.querySelector('img') ;
+        //var preview = document.querySelector('img') ;
+        var preview = document.querySelector('#previewBtn') ;
+        console.log(preview);
+        var file  = document.querySelector('input[type=file]').files[0];
+
+        //不能再前端直接改名
+        //file.name = "xjajajsakdskdjsjhsj.jpg" ;
+        if(file == null || file == ''){
+            console.log("没有检测到文件,请重新选择");
+            return
+        }
+        if(file.size < 1048576){
+            if(/image\//.test(file.type)){
+                var reader = new FileReader() ;
+                reader.onloadend = function(){
+                    preview.src = reader.result ;
+                }
+                if(file){
+                    reader.readAsDataURL(file) ;
+                }else{
+                    preview.src = "image-text.png" ;
+                }
+            }else{
+                console.log("你输入的格式不对,请输入正确的图片!!!!!");
+                return ;
+            }
+        }else{
+            console.log("文件太大，请重新选择!!!");
+            return ;
+        }
+
+
+
+    })
+
+//    $("#fileBtn").click(function(){
+//        //var $preview = document.getElementById("previewBtn");
+//        //var file = $("#fileBtn").files[0] ;
+//
+//    })
+
+    $("#previewBtn").click(function(){
+        $("#fileBtn").trigger("click");
+    })
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

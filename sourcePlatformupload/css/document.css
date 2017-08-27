@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+html,body{ width:100%; margin:0; padding:0; border:0; min-width:1200px;font-family:"SimHei"}
+.fl{ float:left;}
+.fr{ float:right;}
+.docBody{ width:950px; }
+.doc_top{ padding:0 10px; height:40px; background:#2EB2E8; line-height:40px; color:#fff;}
+.span_1{ font-size:18px;}
+.span_2{ font-size:14px;}
+.span_2 span{ cursor:pointer;}
+.span_2 span{ margin:0 5px;}
+.doc_contenttop{ padding:10px 8px;  zoom:1; overflow:auto; border:1px solid #dadada;  min-height: 458px;}
+.doc_addlist{ display:none;}
+.doclist_empty{ width: 100%; height: 438px; z-index: -10; text-align: center; display: none;}
+.doclist_empty img{position: relative; top:129px; }
+.ipWidth{ width:500px !important; padding:.4em 1em !important;}
+.doc_type{ width: 0px !important; height: 0px !important;}
+.doc_Wininput button{ padding:.5em 1.2em .5em !important; margin:0 .4em !important; font-weight:normal !important;}
+.docType_but{ padding: 0!important; margin:0 .4em !important;  vertical-align: middle !important; font-weight:normal !important;}
+.docType_span{ padding:.5em 1.2em .5em !important;}
+.doc_listBody{margin: 10px 0 20px;}
+.doc_list{ width: 100%;  padding: 10px; cursor: pointer;}
+.doc_list:hover { background: #f0f0f0;}
+.doc_list:hover .doc_listTitle{ color: #05a5fc;}
+.doc_editor span{ margin:0 4px}
+.doc_editor span:hover{ color: #05a5fc;}
+.siderBarVdo>div{ padding: 0 20px; font-size: 16px;}
+.doc_confirm{ width:320px !important; margin: -100px 0 0 -160px !important;}

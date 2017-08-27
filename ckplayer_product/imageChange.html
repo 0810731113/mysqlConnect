@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+
+<div>
+    <img id="imgA" src="img/button7.png" alt="">
+</div>
+<script>
+    var cc = null ;
+    var isCanClick = true ;
+
+    $("#imgA").click(function(){
+//        isCanClick = false ;
+        if(isCanClick == false){
+            return ;
+        }
+        isCanClick = false ;
+        $(this).attr("src","img/button66.png");
+        var mm = $(this) ;
+
+        cc = setTimeout(function(){
+            mm.attr("src","img/button7.png") ;
+            isCanClick = true ;
+        },1000,function(){
+            clearTimeout(cc) ;
+        })
+    })
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

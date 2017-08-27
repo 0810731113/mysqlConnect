@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="dist/paging.css">
+    <script src="dist/jquery-1.11.2.js"></script>
+    <script src="dist/paging.js"></script>
+</head>
+<body>
+
+<div id="pageTool"></div>
+
+<script>
+
+    function toAnotherPage(page ,size , count){
+        console.log(page) ;
+    }
+
+    var p = new Paging() ;
+    p.init({
+        target : "#pageTool" ,
+        pagesize : 10 ,
+        count : 100 ,
+        callback : toAnotherPage
+
+    });
+    p.render({
+        count : 100 ,
+        pagesize : 10 ,
+        current : 5 ,
+        callback : toAnotherPage
+    })
+
+</script>
+
+</body>
+</html>

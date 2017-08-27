@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../ckplayer_product/js/jquery.min.js"></script>
+</head>
+<body>
+<style>
+    #pic{
+        width:400px;
+        height:400px;
+        /*border-radius:50% ;*/
+        margin:20px auto;
+        cursor: pointer;
+    }
+
+</style>
+
+<img id="pic" src="image-text.png" >
+<input id="upload" name="file" accept="image/*" type="file" style="display: none"/>
+<script>
+$(function(){
+    $("#pic").click(function(){
+        $("#upload").click();
+        $("#upload").on("change" , function(){
+            var objUrl = getObjectURL(this.files[0]);
+            if(objUrl){
+                $("#pic").attr("src",objUrl) ;
+            }
+        })
+    })
+})
+
+    function getObjectURL(file){
+        var url = null ;
+        if(window.createObjectURL!=undefined){
+            url = window.createObjectURL(file) ;
+        }else if(window.URL!=undefined){
+            url = window.URL.createObjectURL(file) ;
+        }else if(window.webkitURL!=undefined){
+            url = window.webkitURL.createObjectURL(file) ;
+        }
+        return url ;
+    }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

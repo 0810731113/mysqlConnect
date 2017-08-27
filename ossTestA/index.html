@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>OSS对象存储实验</title>
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var client = new OSS.Wrapper({
+        region: 'oss-cn-shanghai',
+        accessKeyId: 'LTAICNs9WNKWyN90',
+        accessKeySecret: '9MYgT69NghzGPsat9Q9dPgxwTW0BJR',
+        bucket: 'eeclass-kejian-store-1'
+    });
+    client.list().then(function (result) {
+        console.log(result);
+    }).catch(function (err) {
+        console.log(err);
+    });
+</script>
+</body>
+</html>

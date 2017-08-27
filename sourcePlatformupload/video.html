@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>视频列表</title>
+    <link rel="stylesheet" href="css/video.css">
+    <link rel="stylesheet" href="./dist/semantic.min.css">
+    <link rel="stylesheet" href="./css/addcourse.css">
+    <link rel="stylesheet" href="css/jquery.fileupload.css">
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!--<script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>-->
+    <script src="./dist/semantic.js"></script>
+
+</head>
+<body>
+
+<div id="headerInfinite">
+    <div id="headerBox">
+        <a href="#" class="logoBox" id="logoBox">
+            <img src="img/logo.png" alt="">
+        </a>
+        <a href="" class="headerLeft firstNav">首页</a>
+        <a href="" class="headerLeft">课堂</a>
+        <a href="" class="headerLeft">问答</a>
+        <a href="" class="headerLeft">论坛</a>
+
+        <!--<div class="item userHeaderImgbox">-->
+            <!--<img class="ui avatar image" src="./img/daniel.jpg">-->
+            <!--<div class="content">-->
+                <!--<a class="header">Daniel Louise</a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="ui dropdown selectUserInfo">
+            <div class="text">王老师01</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <div class="item">个人基本信息</div>
+                <div class="item">
+                    我的课程
+                </div>
+                <div class="item">
+                    我的学习记录
+                </div>
+                <div class="item">
+                    我的收藏
+                </div>
+                <div class="divider"></div>
+                <div class="item">
+                    <i class="folder icon"></i>
+                    退出登录
+                </div>
+
+            </div>
+        </div>
+
+        <div class="userHeaderImgbox" id="headerImg">
+            <img class="ui circular mini image" src="./img/daniel.jpg">
+        </div>
+
+        <div class="ui action input focus searchInputCon">
+            <input type="text" placeholder="Search...">
+            <button class="ui blue button"><i class="search icon"></i></button>
+        </div>
+    </div>
+</div>
+
+<div id="mainContentCon">
+    <div class="breadcrumbMargin">
+
+        <div class="ui breadcrumb">
+            <a class="section">我的课堂</a>
+            <i class="right angle icon divider"></i>
+            <a class="active section">语文课第一章</a>
+            <!--<i class="right angle icon divider"></i>-->
+            <!--<div class="active section">T-Shirt</div>-->
+        </div>
+    </div>
+    <div class="mainContentBox">
+        <div class="siderBarBox siderBarVdo">
+            <div dataNo="1" class="courseListA"><i class="wpforms icon"></i>基本信息</div>
+            <div dataNo="2" class="courseListA"><i class="file text outline icon"></i>课程介绍</div>
+            <div dataNo="3" class="courseListA"><i class="file video outline icon"></i>视频信息</div>
+            <div dataNo="4" class="courseListA"><i class="copy icon"></i>文档信息</div>
+        </div>
+        <div class="mainContent">
+
+            <div class="videoBody">
+                <div class="vdo_top">
+                    <span class="span_1 fl">视频信息</span><span class="span_2 fr"><span>返回</span><span class="add_vdo">新增</span></span>
+                </div>
+                <div class="vdo_contenttop">
+                    <div class="vdo_content">
+                        <div>
+                            <div class="vdo_img"><img  border="0" src="img/preview1.png"></div>
+                            <div class="vdo_title">课堂标题名称</div>
+                            <div class="vdo_layer">
+                                <span class="vdo_hovertitle">课堂标题名称</span><span class="vdo_icon fr"><i class="write icon fl" title="修改"></i><i class="trash outline icon fr" title="删除"></i></span>
+                                <div class="vdo_hoverbody">这是我的视频内这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容容</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="vdo_img"><img  border="0" src="img/preview1.png"></div>
+                            <div class="vdo_title">课堂标题名称</div>
+                            <div class="vdo_layer">
+                                <span class="vdo_hovertitle">课堂标题名称</span><span class="vdo_icon fr"><i class="write icon fl" title="修改"></i><i class="trash outline icon fr" title="删除"></i></span>
+                                <div class="vdo_hoverbody">这是我的视频内这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容容</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="vdo_img"><img  border="0" src="img/preview1.png"></div>
+                            <div class="vdo_title">课堂标题名称</div>
+                            <div class="vdo_layer">
+                                <span class="vdo_hovertitle">课堂标题名称</span><span class="vdo_icon fr"><i class="write icon fl" title="修改"></i><i class="trash outline icon fr" title="删除"></i></span>
+                                <div class="vdo_hoverbody">这是我的视频内这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容容</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="vdo_img"><img  border="0" src="img/preview1.png"></div>
+                            <div class="vdo_title">课堂标题名称</div>
+                            <div class="vdo_layer">
+                                <span class="vdo_hovertitle">课堂标题名称</span><span class="vdo_icon fr"><i class="write icon fl" title="修改"></i><i class="trash outline icon fr" title="删除"></i></span>
+                                <div class="vdo_hoverbody">这是我的视频内这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容这是我的视频内容容</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list_empty">
+                        <img src="img/editor.png">
+                    </div>
+
+                    <!--<div class="pageSelectCon">-->
+                        <!--<div class="ui pagination menu">-->
+                            <!--<a class="icon item">首页</a>-->
+                            <!--<a class="icon item"><i class="left chevron icon"></i> 上一页</a>-->
+                            <!--<a class="item">1</a>-->
+                            <!--<a class="item">2</a>-->
+                            <!--<a class="item">3</a>-->
+                            <!--<a class="item">4</a>-->
+                            <!--<a class="item">5</a>-->
+                            <!--<a class="item">6</a>-->
+                            <!--<a class="icon item">下一页 <i class="right chevron icon"></i></a>-->
+                            <!--<a class="icon item">末页</a>-->
+                        <!--</div>-->
+                        <!--<div class="marginVirture">-->
+                    <!---->
+                        <!--</div>-->
+                        <!--<div class="ui pagination menu selectPageBox">-->
+                            <!--<a class="item">第</a>-->
+                            <!--<select class="item ui dropdown selectPage">-->
+                                <!--<option value="0">0</option>-->
+                                <!--<option value="1">1</option>-->
+                                <!--<option value="2">2</option>-->
+                                <!--<option value="1">3</option>-->
+                                <!--<option value="2">4</option>-->
+                                <!--<option value="1">5</option>-->
+                                <!--<option value="2">6</option>-->
+                            <!--</select>-->
+                            <!--<a class="item">页</a>-->
+                        <!--</div>-->
+                	<!--</div>-->
+                </div>
+                                
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="ui modal vdo_win">
+    <i class="close icon"></i>
+    <div class="vdo_header">
+    新增视频
+    </div>
+
+    <div class="ui form">
+        <div class="inline field vdo_Wininput">
+        <label>标题:</label>
+        <input class="ipWidth" type="text" placeholder="请输入标题">
+        </div>
+        <div class="inline field vdo_Wininput">
+        <label>附件:</label>
+        <input class="ipWidth" type="text" placeholder="添加附件">
+        <button class="ui primary button">浏览</button>
+        <button class="ui primary button">上传</button>
+        </div>
+        <div class="inline field vdo_Wintype">
+            <label>封面:</label>
+            <span class="vdo_Winimg"></span>
+            <button class="ui primary button vdo_updeat vdoType_but">
+                <div class=" vdoType_span fileinput-button">
+                    <span>更改封页</span>
+                    <!-- The file input field used as target for the file upload widget -->
+                    <input class="doc_type" type="file" name="files[]" multiple>
+                </div>
+            </button>
+        </div>
+        <div class="inline field vdo_Wininput">
+        <label>简介:</label>
+        <textarea></textarea>
+        </div>
+    </div>
+    <div class="vdo_Winlogin">
+        <button class="ui button">取消</button>
+        <button class="ui primary button">确定</button>
+    </div>
+
+</div>
+
+
+<div class="ui modal vdo_confirm">
+    <i class="close icon"></i>
+    <div class="header">
+        消息
+    </div>
+    <div class="image content">
+        <div class="description">
+            确定要删除此章节吗？
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui cancel  button">取消</div>
+        <div class="ui  ok  primary  button">确定</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.vdo_content>div').mouseenter(function(){
+        $(this).find('.vdo_layer').css({bottom:'0'});
+    })
+    $('.vdo_content>div').mouseleave(function(){
+        $(this).find('.vdo_layer').css({bottom:-$(this).height()})
+    })
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
